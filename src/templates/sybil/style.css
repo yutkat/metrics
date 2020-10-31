@@ -1,0 +1,168 @@
+/* SVG global context */
+  svg {
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+    font-size: 14px;
+    color: white;
+  }
+
+  .panel-a, .panel-b, .panel-c {
+    position: absolute;
+  }
+
+/* Panel a */
+  .panel-a > .text {
+    position: absolute;
+    top: 70px;
+    left: 60px;
+    width: 380px;
+    height: 180px;
+  }
+  .panel-a .fields {
+    display: flex;
+  }
+  .panel-a .fields .column {
+    flex: 1 1 0;
+  }
+  .panel-a .field {
+    display: flex;
+    flex-direction: column;
+  }
+  .panel-a .field .name {
+    background-color: white;
+    color: black;
+    padding: 0 4px;
+    width: 90px;
+    margin: 6px 0 4px;
+  }
+  .panel-a .field .value {
+    padding-left: 12px;
+  }
+
+/* Panel a - initialization */
+  .panel-a .initialization {
+    position: absolute;
+    top: 150px;
+    left: 75px;
+    width: 350px;
+  }
+  .panel-a .initialization .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .panel-a .initialization .loader svg {
+    margin: 0 4px;
+    /*animation-name: initialization-loader;*/
+    animation-fill-mode: both;
+    animation-duration: 2.4s;
+  }
+  .panel-a .initialization .text {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .panel-a .initialization .loader svg:nth-child(1) {
+    animation-delay: .4s;
+  }
+  .panel-a .initialization .loader svg:nth-child(2) {
+    animation-delay: .8s;
+  }
+  .panel-a .initialization .loader svg:nth-child(3) {
+    animation-delay: 1.2s;
+  }
+  .panel-a .initialization .loader svg:nth-child(4) {
+    animation-delay: 1.6s;
+  }
+  @keyframes initialization-loader {
+    0% { transform: translateX(400px); opacity: 0 }
+    10% { transform: translateX(0px); opacity: 1; }
+    50% { transform: translateX(0px); opacity: 1; fill: rgb(40, 142, 148); }
+    55% { transform: translateX(0px); opacity: 1; fill: rgb(255, 255, 255); }
+    60% { transform: translateX(0px); opacity: 1; fill: rgb(40, 142, 148); }
+    90% { transform: translateX(0px); opacity: 1; }
+    100% { transform: translateX(-400px); opacity: 0; }
+  }
+
+/* Panel b */
+  .panel-b {
+    top: 140px;
+    left: 260px;
+  }
+  .panel-b > .text {
+    position: absolute;
+    top: 90px;
+    left: 140px;
+    width: 210px;
+  }
+  .panel-b .name {
+    width: 100%;
+    margin-left: -4px;
+    margin-bottom: 12px;
+    border: 2px solid white;
+    padding: 2px 4px;
+  }
+  .panel-b .avatar {
+    position: absolute;
+    top: 90px;
+    left: 30px;
+  }
+  .panel-b .header {
+    position: absolute;
+    top: 55px;
+    left: 70px;
+    color: rgb(40, 142, 148);
+  }
+
+/* Panel c */
+  .panel-c {
+    left: 500px;
+    top: 20px;
+  }
+  .panel-c > .text {
+    position: absolute;
+    top: 50px;
+    left: 80px;
+  }
+  .panel-c .field {
+    display: flex;
+    flex-direction: column;
+  }
+  .panel-c .field .name {
+    background-color: black;
+    padding: 0 4px;
+  }
+
+/* Panel c - commits */
+  .panel-c .commits {
+    font-size: 30px;
+  }
+  .panel-c .hue {
+    transform-origin: center;
+    transform-box: fill-box;
+    animation-name: hue-rotation;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+  }
+  
+  @keyframes hue-rotation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(720deg); }
+  }
+
+/* Calendar */
+  :root {
+    --color-calendar-graph-day-bg: #ebedf0;
+    --color-calendar-graph-day-border: rgba(27,31,35,0.06);
+    --color-calendar-graph-day-L1-bg: #9be9a8;
+    --color-calendar-graph-day-L2-bg: #40c463;
+    --color-calendar-graph-day-L3-bg: #30a14e;
+    --color-calendar-graph-day-L4-bg: #216e39;
+    --color-calendar-graph-day-L4-border: rgba(27,31,35,0.06);
+    --color-calendar-graph-day-L3-border: rgba(27,31,35,0.06);
+    --color-calendar-graph-day-L2-border: rgba(27,31,35,0.06);
+    --color-calendar-graph-day-L1-border: rgba(27,31,35,0.06);
+    --color-calendar-halloween-graph-day-L1-bg: #ffee4a;
+    --color-calendar-halloween-graph-day-L2-bg: #ffc501;
+    --color-calendar-halloween-graph-day-L3-bg: #fe9600;
+    --color-calendar-halloween-graph-day-L4-bg: #03001c;
+  }
