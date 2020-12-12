@@ -11,6 +11,7 @@ query Metrics {
     }
     repositories(last: $repositories, isFork: false, ownerAffiliations: OWNER) {
       totalCount
+      totalDiskUsage
       nodes {
         name
         watchers {
@@ -38,6 +39,9 @@ query Metrics {
           totalCount
         }
         pr_merged: pullRequests(states: MERGED) {
+          totalCount
+        }
+        releases {
           totalCount
         }
         forkCount
