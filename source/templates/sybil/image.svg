@@ -1,26 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="<%= 48
-  + (!!base.header)*62
-  + (!!base.metadata)*108
-  + (!!base.activity)*108
-  + (!!base.community)*94
-  + (!!base.repositories)*142
-  + ((!!base.repositories)*(!!computed.plugins.traffic))*18
-  + ((!!base.repositories)*(!!computed.plugins.followup))*102
-  + ((!!base.repositories)*(!!computed.plugins.lines))*34
-  + (!!computed.plugins.pagespeed)*110
-  + (!!computed.plugins.languages)*124
-  + Math.max(0, (((!!base.metadata)+(!!base.header)+((!!base.activity)||(!!base.community))+(!!base.repositories)+(!!computed.plugins.pagespeed)+(!!computed.plugins.languages))-1))*20
-%>">
-  <%
-    meta.$ = `<span class="ps1-path">${`${user.login}`.toLocaleLowerCase()}@metrics</span>:<span class="ps1-location">~</span>${computed.token.scopes.includes("repo") ? "#" : "$"}`
-    meta.animations = !meta.placeholder ? {stdin:.16, stdout:.28, length:(2+Object.keys(base).length+Object.keys(computed.plugins).length)} : {stdin:0, stdout:0, length:0}
-  %>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="99999" class="<%= !animated ? 'no-animations' : '' %>">
 
   <defs><style><%= fonts %></style></defs>
-
-  <style>
-    <%= style %>
-  </style>
+  <style><%= style %></style>
 
   <style>
   svg {
@@ -32,7 +13,7 @@
     <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xlink="http://www.w3.org/1999/xlink">
 
       <div class="panel-a">
-      
+
         <svg version="1.0" width="485" height="295" viewBox="0 0 970 590" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient gradientUnits="userSpaceOnUse" x1="626.954" y1="106.507" x2="626.954" y2="600.825" id="gradient-0" spreadMethod="pad" gradientTransform="matrix(1, 0, 0, 1, -252.223952, -69.962656)">
@@ -54,7 +35,7 @@
             INITIALIZATION<span class="s1">/</span><span class="s2">/</span>
           </div>
           <div class="loader">
-            <% for (let i = 0; i < 4; i++) { %> 
+            <% for (let i = 0; i < 4; i++) { %>
               <svg width="63" height="54" viewBox="0 0 56 46" xmlns="http://www.w3.org/2000/svg">
                 <polygon style="fill: rgb(255, 255, 255); fill-opacity: 0.7;" points="6.091 5.408 43.878 5.408 50.359 11.522 50.369 32.734 44.067 39.923 11.423 39.656 5.873 34.268"></polygon>
                 <line style="stroke: rgb(255, 255, 255);" x1="22.967"  y1="0.907" x2="0.574" y2="0.956"></line>
@@ -105,7 +86,7 @@
       </div>
 
       <div class="panel-b">
-        
+
           <svg version="1.0" width="387" height="360" viewBox="0 0 775.000000 520.000000" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient gradientUnits="userSpaceOnUse" x1="626.954" y1="106.507" x2="626.954" y2="600.825" id="gradient-0" spreadMethod="pad" gradientTransform="matrix(1, 0, 0, 1, -181.178146, -103.229454)">
@@ -153,7 +134,7 @@
       </div>
 
       <div class="panel-c">
-            
+
         <svg width="160" height="160" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <radialGradient gradientUnits="userSpaceOnUse" cx="87.934" cy="79.591" r="57.771" id="gradient-0" gradientTransform="matrix(1, 0, 0, 1, -22.690545, -6.201027)">
@@ -180,7 +161,7 @@
 
       </div>
 
-
+      <div id="metrics-end"></div>
     </div>
   </foreignObject>
 </svg>
